@@ -1,0 +1,81 @@
+<nav class="grey darken-3">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo center">
+                <img src="/img/favicon.png" alt="">
+            </a>
+            <a href="#" data-target="main-menu" class="sidenav-trigger show-on-large ">
+                <i class="fa fa-bars fa-2x"></i>
+            </a>
+            {{!-- Right nav --}}
+            <ul class="right hide-on-small-only">
+                {{#if user}}
+                <li>
+                    <a href="/dashboard">Welcome {{user.firstName}}</a>
+                </li>
+                <li>
+                    <a href="/auth/logout">
+                        <i class="fa fa-sign-out"></i> Logout
+                    </a>
+                </li>
+
+                {{else}}
+                <li>
+                    <a href="/stories">
+                        <i class="fa fa-book"></i>
+                        Public Stories
+                    </a>
+                </li>
+                {{/if}}
+            </ul>
+            {{!-- Right nav --}} {{!-- Side Nav --}} {{!-- Side Nav --}}
+        </div>
+    </div>
+</nav>
+<ul class="sidenav" id="main-menu">
+    <div class="background center">
+        <img src="/img/logo.png">
+    </div>
+    {{#if user}}
+    <li>
+        <a href="/stories">
+            <i class="fa fa-book"></i>
+            Public Stories
+        </a>
+    </li>
+    <li class="divider"></li>
+    <li>
+        <a href="/dashboard">
+            <i class="fa fa-cog"></i>
+            Dashboard
+        </a>
+    </li>
+    <li>
+        <a href="/stories/my">
+            <i class="fa fa-user"></i>
+            My Stories
+        </a>
+    </li>
+    <li>
+        <a href="/auth/logout">
+            <i class="fa fa-sign-out"></i>
+            Log out
+        </a>
+    </li>
+
+    {{else}}
+    <li>
+        <a href="/auth/google" class="btn red darken-1">
+            <i class="fa fa-google left"></i>Log in with Google</a>
+    </li>
+
+    <li>
+        <a href="/stories">
+            <i class="fa fa-book"></i>
+            Public Stories
+        </a>
+    </li>
+    {{/if}}
+
+
+</ul>
